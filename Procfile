@@ -1,1 +1,1 @@
-web: gunicorn app:youtubeDownloader
+web: gunicorn app:app
