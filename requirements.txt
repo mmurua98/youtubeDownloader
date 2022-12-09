@@ -1,6 +1,6 @@
 click==8.0.4
 colorama==0.4.5
-dataclasses==0.6
+dataclasses==0.8
 DateTime==4.7
 Flask==2.0.3
 gunicorn==20.1.0

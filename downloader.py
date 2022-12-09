@@ -12,7 +12,7 @@ videoChannel = None
 videoViews = None
 videoThumbnail = None
 videoLength = None
-yd = None
+#yd = None
 
 def getVideo(link):
     yt = YouTube(link)
@@ -54,8 +54,10 @@ def getLength():
     return videoLength
 
 def downloadVideo():
-    if os.name == "nt":
-        DOWNLOAD_FOLDER = f"{os.getenv('USERPROFILE')}\\Downloads"
-    else:  # PORT: For *Nix systems
-        DOWNLOAD_FOLDER = f"{os.getenv('HOME')}/Downloads"
-    return yd.download(DOWNLOAD_FOLDER)
+    # if os.name == "nt":
+    #     DOWNLOAD_FOLDER = f"{os.getenv('USERPROFILE')}\\Downloads"
+    # else:  # PORT: For *Nix systems
+    #     DOWNLOAD_FOLDER = f"{os.getenv('HOME')}/Downloads"
+    # return yd.download(DOWNLOAD_FOLDER)
+    return yd.download()
+    #return yd.download('C:/Users/migmu/Desktop/pythonvideos')

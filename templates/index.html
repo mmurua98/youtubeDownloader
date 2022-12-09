@@ -110,7 +110,14 @@
                                         </button>
                                         <button type="button" class="btn btn-sm btn-outline-secondary" disabled>{{views}}</button>
                                     </div>
-                                    <button type="button" class="btn btn-info" onclick="window.location.href='{{url_for('download')}}';">Download</button>
+                                    <form action="{{url_for('download')}}" method="post">
+                                        <button type="submit" class="btn btn-info">Download</button>
+                                    </form>
+                                    <!-- <button type="button" class="btn btn-info" onclick="window.location.href='{{url_for('download')}}';">Download</button> -->
+                                    <!-- <button type="button" class="btn btn-info" onclick="window.location.href="http://127.0.0.1:5000/"+{{path}};">Download</button> -->
+                                    <!-- <a href="http://127.0.0.1:5000/{{path}}">
+                                        <button>Click me</button>
+                                    </a> -->
                                     <small class="text-muted"><span class="font-weight-bold">Length:</span> {{length}}</small>
                                 </div>
                             </div>
@@ -176,7 +183,7 @@
         var url = window.location.href;
         // Get DIV
         var divInfo = document.getElementById('info');
-        var divMessage = document.getElementById('message');
+        //var divMessage = document.getElementById('message');
         // Check if URL contains the keyword
         if( url.search( 'search' ) > 0 ) {
             // Display the message
@@ -185,12 +192,12 @@
             divInfo.style.display = "none";
         }
 
-        if( url.search( 'download' ) > 0 ) {
+        /*if( url.search( 'download' ) > 0 ) {
             // Display the message
             divMessage.style.display = "block";
         }else{
             divMessage.style.display = "none";
-        }
+        }*/
 
 
 
