@@ -17,7 +17,7 @@ def search():
     # print("Channel: ", downloader.getChannel() )
     # print("Views: ", downloader.getViews() )
     # print("Thumbnail: ", downloader.getThumbnail() )
-    global filename
+    global filename, filenameAudio
     
     vidTitle = downloader.getTitle()
     vChannel = downloader.getChannel()
@@ -25,7 +25,10 @@ def search():
     vViews = downloader.getViews()
     vLength = downloader.getLength()
 
+    #video
     filename =  str(vidTitle) + ".mp4"
+    #audio
+    filenameAudio =  str(vidTitle) + ".mp3"
 
     return render_template('index.html', title=vidTitle, channel=vChannel, thumbnail=vThumbnail, views=vViews, length=vLength)
 
@@ -37,7 +40,7 @@ def download():
         #return render_template('index.html')
         #openFile = open(filename, 'r')
         # return send_file(path, as_attachment=True, mimetype='video/mp4', attachment_filename=os.path.basename(filename))
-        return send_file(path, as_attachment=True, attachment_filename=filename)
+        return send_file(path, as_attachment=True, attachment_filename=filenameAudio)
     
     return render_template('index.html')
 

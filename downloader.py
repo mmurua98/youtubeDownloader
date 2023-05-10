@@ -35,7 +35,10 @@ def getVideo(link):
 
     # print(streams)
 
-    yd = yt.streams.get_by_resolution("720p")
+    #video
+    #yd = yt.streams.get_by_resolution("720p")
+    # extract only audio
+    yd = yt.streams.filter(only_audio=True).first()
     # yd.download('C:/Users/migmu/Desktop/pythonvideos')
 
 def getTitle():
